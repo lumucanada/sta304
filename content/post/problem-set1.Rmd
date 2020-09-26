@@ -1,5 +1,6 @@
 ---
-title: "THe satisfaction of people for the federal government will affect the 2019 election result"
+title: THe satisfaction of people for the federal government will affect the 2019
+  election result
 author: "LU MU"
 date: '2020-09-26'
 categories: R
@@ -18,8 +19,9 @@ library(devtools)
 cesR::get_ces(srvy = "ces2019_web")
 ```
 
+Author: "LU MU"
 
-# abstract
+# Abstract
 
 we study the 2019 federal election in terms of the satisfaction of the government and people's vote choice. We find that people who are satisfied with
  the government tend to vote for Liberal Party and people who are not satisfied  with the government choose to support the Conservative instead. This survey is 
@@ -55,21 +57,15 @@ did a great job. We find that there are slightly below 8000 votes the Liberal pa
 # Including Plots
 
 ```{r 1, message=FALSE,warning=FALSE}
-class(ces2019_web$cps19_fed_gov_sat )
-
-ces2019_web
-  ggplot(data = ces2019_web, aes(x = cps19_fed_gov_sat  )) +
-  geom_bar()
+ces2019_web %>%
+  ggplot(aes(x = cps19_fed_gov_sat  )) + geom_bar()
   
 
 
 ```
 ```{r 2,message=FALSE,warning=FALSE}
-class(ces2019_web$cps19_votechoice )
-  
-ces2019_web
-  ggplot(data = ces2019_web, aes(x = cps19_votechoice  )) +
-    geom_bar()
+ces2019_web %>%
+  ggplot( aes(x = cps19_votechoice  )) + geom_bar()
 
 ```
 ```{r 3,message=FALSE,warning=FALSE}
