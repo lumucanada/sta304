@@ -175,8 +175,7 @@ ces2019_web
 ## #   cps19_lead_cares_114 &lt;dbl+lbl&gt;, cps19_lead_cares_115 &lt;dbl+lbl&gt;,
 ## #   cps19_lead_cares_116 &lt;dbl+lbl&gt;, …
   ggplot(data = ces2019_web, aes(x = cps19_fed_gov_sat  )) +
-  geom_bar()
-## Don&#39;t know how to automatically pick scale for object of type haven_labelled/vctrs_vctr/double. Defaulting to continuous.</code></pre>
+  geom_bar()</code></pre>
 <p><img src="/post/problem-set1_files/figure-html/1-1.png" width="672" /></p>
 <pre class="r"><code>class(ces2019_web$cps19_votechoice )
 ## [1] &quot;haven_labelled&quot; &quot;vctrs_vctr&quot;     &quot;double&quot;
@@ -246,17 +245,13 @@ ces2019_web
 ## #   cps19_lead_cares_114 &lt;dbl+lbl&gt;, cps19_lead_cares_115 &lt;dbl+lbl&gt;,
 ## #   cps19_lead_cares_116 &lt;dbl+lbl&gt;, …
   ggplot(data = ces2019_web, aes(x = cps19_votechoice  )) +
-    geom_bar()
-## Don&#39;t know how to automatically pick scale for object of type haven_labelled/vctrs_vctr/double. Defaulting to continuous.
-## Warning: Removed 6258 rows containing non-finite values (stat_count).</code></pre>
+    geom_bar()</code></pre>
 <p><img src="/post/problem-set1_files/figure-html/2-1.png" width="672" /></p>
 <pre class="r"><code>ces2019_web1 &lt;-
     ces2019_web %&gt;%
   filter(cps19_fed_gov_sat &gt;2)
   ggplot(data = ces2019_web1, aes(x = cps19_votechoice  )) +
-    geom_bar()
-## Don&#39;t know how to automatically pick scale for object of type haven_labelled/vctrs_vctr/double. Defaulting to continuous.
-## Warning: Removed 3629 rows containing non-finite values (stat_count).</code></pre>
+    geom_bar()</code></pre>
 <p><img src="/post/problem-set1_files/figure-html/3-1.png" width="672" /></p>
 <pre class="r"><code>
 
@@ -264,9 +259,7 @@ ces2019_web2 &lt;-
   ces2019_web %&gt;%
   filter(cps19_fed_gov_sat &lt; 3) 
   ggplot(data = ces2019_web2, aes(x = cps19_votechoice  )) +
-    geom_bar()
-## Don&#39;t know how to automatically pick scale for object of type haven_labelled/vctrs_vctr/double. Defaulting to continuous.
-## Warning: Removed 2629 rows containing non-finite values (stat_count).</code></pre>
+    geom_bar()</code></pre>
 <p><img src="/post/problem-set1_files/figure-html/4-1.png" width="672" /></p>
 </div>
 <div id="discussion" class="section level1">
@@ -284,7 +277,7 @@ so our study is scientific based and correct.</p>
 </div>
 <div id="appendix" class="section level1">
 <h1>Appendix</h1>
-<p>code and data supporting this analysis is available at:</p>
+<p>code and data supporting this analysis is available at: <a href="https://github.com/lumucanada/sta304/blob/master/code/code%20cesr.R" class="uri">https://github.com/lumucanada/sta304/blob/master/code/code%20cesr.R</a></p>
 </div>
 <div id="reference" class="section level1">
 <h1>reference</h1>
