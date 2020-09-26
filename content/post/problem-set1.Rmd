@@ -1,32 +1,121 @@
 ---
-title: "123"
-author: "Frida Gomam"
-date: 2020-09-23T21:13:14-05:00
-categories: ["R"]
-tags: ["R Markdown", "plot", "regression"]
+title: "THe satisfaction of people for the federal government will affect the 2019 election result"
+author: "LU MU"
+date: '2020-09-26'
+categories: R
+tags:
+- R Markdown
+- plot
+- regression
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
+install.packages("tidyverse")
+install.packages("devtools")
+devtools::install_github("hodgettsp/cesR")
+library(tidyverse)
+library(cesR)
+cesR::get_ces(srvy = "ces2019_web")
 ```
 
 
-```{r cars}
-summary(cars)
-fit <- lm(dist ~ speed, data = cars)
-fit
-```
+# abstract
+
+we study the 2019 federal election in terms of the satisfaction of the government and people's vote choice. We find that people who are satisfied with
+ the government tend to vote for Liberal Party and people who are not satisfied  with the government choose to support the Conservative instead. This survey is 
+ important to every party and their leaders because people can really feel you whether you did well or no, and they can trust you or ignore you. If people are
+ satisfied, they will continue to vote for you. 
+ 
+# Introduction
+ Every four years of federal election has been a very exciting and important activity for every Canadian citizens. People wants to vote the party they like 
+ and choose their favorite leader that can take the responsbilities of being a prime minister and make a Canada a better place. For the past four years, from
+ 2015 to 2019, the liberal party is the ruling party, and the federal government consists of most of the liberal. Now, four years passed, it is time to see how  
+people satisfy the federal government. If they still like the federal government, will they continue to support the liberal or they do not like it, will they
+ give the Conservative party a chance. 
+ 
+First we construct the plot that shows the satisfaction of people to the federal government on the scale from 1 to 5. 1 represents people are not satisfied 
+the performance of the federal government not all and 5 represents people are very satisfied the government. We find that the most people choose the scale 2,
+followed by scale 4 and scale 3. Scale 5 has the least people. I personally divided 5 scales into 2 catagories: 1, 2 is not satisfied. 3,4,5 is satisfied.
+ 
+Then we construct the plot that shows the party people will likely to vote for. As we see, the liberal party has the most vote which is about 9000. And the
+Conservative Party has the second most vote which is about 8700. 1 stands for the Liberal and 2 stands for the Conservative. The other parties are relatively 
+small compared to the Liberal and the Conservative Party so we are not consider them. 
+
+In order to see that people are not satisfied the performance of federal government in the past four years, we only consider the scale 1 and scale 2 so we drop
+the scale 3,4,5, which removes 3629 rows. We find that there are 8000 votes for the Conservative Party, compared to 1000 votes for the Liberal Party. 
+
+Reversely, we drop the scale 1 and scale 2, which removes 2629 rows and only leave scale3, 4, 5 to represent these people who think the federal government 
+did a great job. We find that there are slightly below 8000 votes the Liberal party and about 700 votes for the Conservative Party. 
+
+# varibale selection
+ cps19_fed_gov_sat: How satisfied are you for the federal government on a scale from 1 to 5. 
+ cps19_votechoice: what party will you going to vote for? the choice is:Liberal Party, conservative Party, NDP, Bloc Qu, Green Party, People's Party, Another Party(please specify), Don't know/prefer not to answer
+
 
 # Including Plots
 
-You can also embed plots. See Figure \@ref(fig:pie) for example:
+```{r 1}
+class(ces2019_web$cps19_fed_gov_sat )
 
-```{r pie, fig.cap='A fancy pie chart.', tidy=FALSE}
-par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c('Sky', 'Sunny side of pyramid', 'Shady side of pyramid'),
-  col = c('#0292D8', '#F7EA39', '#C4B632'),
-  init.angle = -50, border = NA
-)
+ces2019_web
+  ggplot(data = ces2019_web, aes(x = cps19_fed_gov_sat  )) +
+  geom_bar()
+  
+
+
 ```
+```{r 2}
+class(ces2019_web$cps19_votechoice )
+  
+ces2019_web
+  ggplot(data = ces2019_web, aes(x = cps19_votechoice  )) +
+    geom_bar()
+
+```
+```{r 3}
+ces2019_web1 <-
+    ces2019_web %>%
+  filter(cps19_fed_gov_sat >2)
+  ggplot(data = ces2019_web1, aes(x = cps19_votechoice  )) +
+    geom_bar()
+```
+
+```{r 4}
+
+
+ces2019_web2 <-
+  ces2019_web %>%
+  filter(cps19_fed_gov_sat < 3) 
+  ggplot(data = ces2019_web2, aes(x = cps19_votechoice  )) +
+    geom_bar()
+```
+
+# Discussion
+ From 2015 to 2019, the Liberal Party works as the ruling party in the federal government. In the past 4 years, the government has been working hard towards the
+ economic, environmental, educational issues and acted one of the most important roles in the world. Whether the Canadian citizens are liked what they did or no
+ the 2019 election will tell us the truth. The people who are satisfied about the federal government are willing to continue trust and support the Liberal Party.
+ HOwever, there are still half citizens thinks the federal government did not do as good as they expect in the past four years and they tend to choose the Conservative Party in the 2019 election. 
+  
+# Weakness and next step
+ The weakness of the study is that we assume people don't vote the Liberal Party will vote for the conservative Party, same for the reverse. In fact, people can 
+ vote for other parties like NDP, green parties, etc. But we can see the changes for the Liberal Party and the Conservative Party is most obvious and dramatic, 
+ so our study is scientific based and correct. 
+  
+
+# Appendix
+code and data supporting this analysis is available at:  
+
+# reference
+ Canada Stephenson, Laura B, Western University,Harell, Allison, Université du Québec à Montréal,Rubenson, Daniel, Ryerson University,Loewen, Peter John, 
+  University of Toronto, Canadian Election Study, 2019, Online Survey, Study Documentation.
+  https://hodgettsp.github.io/cesR/
+ Paul A. Hodgetts and Rohan Alexander (2020). cesR: Access the CES Datasets a Little Easier.. R package version 0.1.0.
+  Hadley Wickham, Jim Hester and Winston Chang (2020). devtools: Tools to
+  Make Developing R Packages Easier. R package version 2.3.2.
+  https://CRAN.R-project.org/package=devtools
+  - Stephenson, Laura B; Harell, Allison; Rubenson, Daniel; Loewen, Peter John, 2020, '2019 Canadian Election Study - Online Survey', https://doi.org/10.7910/DVN/DUS88V, Harvard Dataverse, V1
+  
+  - Stephenson, Laura, Allison Harrel, Daniel Rubenson and Peter Loewen. Forthcoming. 'Measuring Preferences and Behaviour in the 2019 Canadian Election Study,' Canadian Journal of Political Science.
+  
+  LINK: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DUS88V

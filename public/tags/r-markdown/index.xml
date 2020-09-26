@@ -6,14 +6,14 @@
     <description>Recent content in R Markdown on lumu website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Sep 2020 21:13:14 -0500</lastBuildDate><atom:link href="/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>123</title>
-      <link>/2020/09/23/123/</link>
-      <pubDate>Wed, 23 Sep 2020 21:13:14 -0500</pubDate>
+      <title>THe satisfaction of people for the federal government will affect the 2019 election result</title>
+      <link>/2020/09/26/the-satisfaction-of-people-for-the-federal-government-will-affect-the-2019-election-result/</link>
+      <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2020/09/23/123/</guid>
-      <description>summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.:19.0 3rd Qu.: 56.00 ## Max. :25.0 Max. :120.00 fit &amp;lt;- lm(dist ~ speed, data = cars) fit ## ## Call: ## lm(formula = dist ~ speed, data = cars) ## ## Coefficients: ## (Intercept) speed ## -17.579 3.</description>
+      <guid>/2020/09/26/the-satisfaction-of-people-for-the-federal-government-will-affect-the-2019-election-result/</guid>
+      <description>abstract we study the 2019 federal election in terms of the satisfaction of the government and people’s vote choice. We find that people who are satisfied with the government tend to vote for Liberal Party and people who are not satisfied with the government choose to support the Conservative instead. This survey is important to every party and their leaders because people can really feel you whether you did well or no, and they can trust you or ignore you.</description>
     </item>
     
   </channel>
