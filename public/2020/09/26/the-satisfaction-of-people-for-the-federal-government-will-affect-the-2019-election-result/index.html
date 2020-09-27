@@ -22,11 +22,6 @@
 
 
 
-
-<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
-
-
-
 <link rel="stylesheet" href="/css/fonts.css" media="all">
 <link rel="stylesheet" href="/css/main.css" media="all">
 
@@ -62,7 +57,7 @@
 
   <article class="article">
     
-    <span class="article-duration">5 min read</span>
+    <span class="article-duration">4 min read</span>
     
 
     <h1 class="article-title">THe satisfaction of people for the federal government will affect the 2019 election result</h1>
@@ -108,25 +103,9 @@ cps19_votechoice: what party will you going to vote for? the choice is:Liberal P
 </div>
 <div id="including-plots" class="section level1">
 <h1>Including Plots</h1>
-<pre class="r"><code>ces2019_web %&gt;%
-  ggplot(aes(x = cps19_fed_gov_sat  )) + geom_bar()</code></pre>
-<p><img src="/post/problem-set1_files/figure-html/1-1.png" width="672" /></p>
-<pre class="r"><code>ces2019_web %&gt;%
-  ggplot( aes(x = cps19_votechoice  )) + geom_bar()</code></pre>
-<p><img src="/post/problem-set1_files/figure-html/2-1.png" width="672" /></p>
-<pre class="r"><code>ces2019_web1 &lt;-
-    ces2019_web %&gt;%
-  filter(cps19_fed_gov_sat &gt;2)
-  ggplot(data = ces2019_web1, aes(x = cps19_votechoice  )) +
-    geom_bar()</code></pre>
-<p><img src="/post/problem-set1_files/figure-html/3-1.png" width="672" /></p>
-<pre class="r"><code>
-
-ces2019_web2 &lt;-
-  ces2019_web %&gt;%
-  filter(cps19_fed_gov_sat &lt; 3) 
-  ggplot(data = ces2019_web2, aes(x = cps19_votechoice  )) +
-    geom_bar()</code></pre>
+<p><img src="/post/problem-set1_files/figure-html/1-1.png" width="672" />
+<img src="/post/problem-set1_files/figure-html/2-1.png" width="672" />
+<img src="/post/problem-set1_files/figure-html/3-1.png" width="672" /></p>
 <p><img src="/post/problem-set1_files/figure-html/4-1.png" width="672" /></p>
 </div>
 <div id="discussion" class="section level1">
@@ -183,18 +162,6 @@ Make Developing R Packages Easier. R package version 2.3.2.
 
     </div>
     
-
-
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
-<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
-
-
 
     
 

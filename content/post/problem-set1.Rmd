@@ -56,19 +56,19 @@ did a great job. We find that there are slightly below 8000 votes the Liberal pa
 
 # Including Plots
 
-```{r 1, message=FALSE,warning=FALSE}
+```{r 1, message=FALSE,warning=FALSE, echo=FALSE}
 ces2019_web %>%
   ggplot(aes(x = cps19_fed_gov_sat  )) + geom_bar()
   
 
 
 ```
-```{r 2,message=FALSE,warning=FALSE}
+```{r 2,message=FALSE,warning=FALSE,echo=FALSE}
 ces2019_web %>%
   ggplot( aes(x = cps19_votechoice  )) + geom_bar()
 
 ```
-```{r 3,message=FALSE,warning=FALSE}
+```{r 3,message=FALSE,warning=FALSE,echo=FALSE}
 ces2019_web1 <-
     ces2019_web %>%
   filter(cps19_fed_gov_sat >2)
@@ -76,7 +76,7 @@ ces2019_web1 <-
     geom_bar()
 ```
 
-```{r 4,message=FALSE,warning=FALSE}
+```{r 4,message=FALSE,warning=FALSE,echo=FALSE}
 
 
 ces2019_web2 <-
